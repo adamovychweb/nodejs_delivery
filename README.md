@@ -1,5 +1,7 @@
 Delivery company API
 
+Implemented with: NestJS, TypeScript, MongoDB
+
 You can run this API. Steps:
 - Clone project
 - Run `npm install`
