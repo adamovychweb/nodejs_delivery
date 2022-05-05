@@ -1,4 +1,6 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Patch, UseGuards } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
+
 import { UsersService } from '~modules/users/services/users.service';
 import { GetUser } from '~modules/users/decorators/get-user.decorator';
 import { ReadableUserSerializer } from '~modules/users/serializers/readable-user.serializer';
@@ -7,6 +9,7 @@ import { UserDoc } from '~modules/users/schemas/user.schema';
 import { JwtTokenGuard } from '~modules/jwt-tokens/guards/jwt-token.guard';
 import { UserRolesGuard } from '~modules/users/guards/user-roles.guard';
 
+@ApiTags('Users')
 @Controller('users/me')
 @UseGuards(JwtTokenGuard, UserRolesGuard)
 export class UsersController {

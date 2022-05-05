@@ -24,7 +24,9 @@ import { UserRole } from '~modules/users/decorators/roles.decorator';
 import { TrucksService } from '~modules/trucks/services/trucks.service';
 import { GetManyQueryDto } from '~modules/loads/dtos/get-many.query.dto';
 import { UpdateLoadBodyDto } from '~modules/loads/dtos/update-load.body.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Loads')
 @Controller('loads')
 @UseGuards(JwtTokenGuard, UserRolesGuard)
 export class LoadsController {

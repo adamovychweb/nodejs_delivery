@@ -1,4 +1,6 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post, Put, UseGuards } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
+
 import { TrucksService } from '~modules/trucks/services/trucks.service';
 import { JwtTokenGuard } from '~modules/jwt-tokens/guards/jwt-token.guard';
 import { GetUser } from '~modules/users/decorators/get-user.decorator';
@@ -9,6 +11,7 @@ import { UserRolesGuard } from '~modules/users/guards/user-roles.guard';
 import { UserRolesEnum } from '~modules/users/enums/user-roles.enum';
 import { UserRole } from '~modules/users/decorators/roles.decorator';
 
+@ApiTags('Trucks')
 @Controller('trucks')
 @UseGuards(JwtTokenGuard, UserRolesGuard)
 @UserRole(UserRolesEnum.DRIVER)
